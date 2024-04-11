@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Раскладка грид</title>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="manifest" href="manifest.json">
+        
+           
+<script type="text/javascript">
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('serviceworker.js')
+                .then(function(registration) {
+                    console.log('Registration successful, scope is:', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('Service worker registration failed, error:', error);
+                });
+            }
+</script>
+<head>
+    <meta charset="utf-8" />
+    <title>Ticket Calculator</title>
+  </head>
+  <style>
+    #container{
+            width: 2450px;
+            height: 400px;  
+            display: grid;
+            grid-template-columns: 50% 50%;
+            background-color: rgb(200, 197, 197);
+               
+    }
+    .drop_list{
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 150px;
+      width: 250px;
+      height: 45px;
+      background-color: rgb(229, 223, 235);
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      border-radius: 20px;
+      font-size: 18px;
+
+    }
+    .txt{
+      text-align: center;
+      font-size: 28px;
+      width: 210%;    
+    }
+    .img{
+      width: 100vw;
+      height: 75vh;
+    }
+  </style> 
+  <script>
+    let obj = {
+        "Msc-Spb":2309,
+        "Spb-Msc":2309,
+        "Msc-Par":18520,
+        "Par-Msc":18520,
+        "Par-Spb":15220,
+        "Spb-Par":15220,
+        "Bng-Msc":19250,
+        "Bng-Spb":16521,
+        "Bng-Par":17321,
+        "Par-Bng":17562,
+        "Msc-Bng":18522,
+        "Spb-Bng":16230,
+        "Bng-Bng":0,
+        "Msc-Msc":0,
+        "Spb-Spb":0,
+        "Par-Par":0,
+        
+    }
+  
+    function Change2()
+    {
+        let box2 = document.querySelector(".city");
+        let box1 = document.querySelector(".start");
+        let key = box1.value+"-"+box2.value;
+        let rez = document.querySelector("h1");
+        rez.innerHTML = "Total ticket cost: " +  obj[key]+" !";
+    }
+  </script>
+  <body>
+    <img class="img" src="Take_off.jpg">
+    <div id = "container">   
+    <select class="drop_list start" name="start" id="" onchange="Change2()";>
+        <option value="Msc">Москва</option>
+        <option value="Spb">Санкт-Петебург</option>
+        <option value="Par">Париж</option>
+        <option value="Bng">Бангкок</option>
+    </select>
+    <select name="Finish" class="drop_list city" onchange="Change2();">
+        <option value="Msc">Москва</option>
+        <option value="Spb">Санкт-Петебург</option>
+        <option value="Par">Париж</option>
+        <option value="Bng">Бангкок</option>
+    </select>
+    <h1 class="txt"></h1>  
+  </div>
+  </body>
+</html>
