@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Раскладка грид</title>
-        <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="manifest" href="manifest.json">
-        
-           
-<script type="text/javascript">
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('serviceworker.js')
-                .then(function(registration) {
-                    console.log('Registration successful, scope is:', registration.scope);
-                })
-                .catch(function(error) {
-                    console.log('Service worker registration failed, error:', error);
-                });
-            }
-</script>
-<head>
+
+  <head>
     <meta charset="utf-8" />
     <title>Ticket Calculator</title>
   </head>
   <style>
     #container{
-            width: 2450px;
-            height: 400px;  
+            width: 2350px;
+            height: 300px;  
             display: grid;
             grid-template-columns: 50% 50%;
             background-color: rgb(200, 197, 197);
@@ -70,11 +53,10 @@
         "Bng-Bng":0,
         "Msc-Msc":0,
         "Spb-Spb":0,
-        "Par-Par":0,
-        
+        "Par-Par":0,        
     }
   
-    function Change2()
+    function Change2()  
     {
         let box2 = document.querySelector(".city");
         let box1 = document.querySelector(".start");
@@ -84,7 +66,13 @@
     }
   </script>
   <body>
-    <img class="img" src="Take_off.jpg">
+    <video width="2300" height="900" controls="controls" autoplay muted>
+      <source src="istockphoto-515220072-640_adpp_is.mp4" type='video/ogg; codecs="theora, vorbis"'>
+      <source src="istockphoto-515220072-640_adpp_is.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+      <source src="istockphoto-515220072-640_adpp_is.mp4" type='video/webm; codecs="vp8, vorbis"'>
+      Тег video не поддерживается вашим браузером. 
+      <a href="istockphoto-515220072-640_adpp_is.mp4">Скачайте видео</a>.
+    </video>
     <div id = "container">   
     <select class="drop_list start" name="start" id="" onchange="Change2()";>
         <option value="Msc">Москва</option>
